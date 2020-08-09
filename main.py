@@ -132,7 +132,7 @@ def check(lista):
 namea = input("What's your name?:  ")
 nameb = input("What's your name?:  ")
 while another == True:
-    print("It is player one's turn.")
+    print(f"It is {namea}'s turn.")
     playera = int(input("Enter the row you want to put X in(1, 2, 3):  "))
     playera -=1
     print(lista[playera])
@@ -146,7 +146,7 @@ while another == True:
     
 
     printlist()
-    print("It is player two's turn.")
+    print(f"It is {nameb}'s turn.")
     playerb = int(input("Enter the row you want to put O in(1, 2, 3):  "))
     playerb -=1
     print(lista[playerb])
