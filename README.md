@@ -1,5 +1,5 @@
 # A-Tic-Tac-Toe-Game
-A Tic Tac Toe game made in Python with 2 players. No external libraries.
+A Tic Tac Toe game made in Python and C++ with 2 players. No external libraries.
 <br></br>
 All the normal features of a tic tac toe game you would expect, except for two:
 <br></br>
