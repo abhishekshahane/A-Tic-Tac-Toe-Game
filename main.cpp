@@ -164,6 +164,7 @@ int main()
     cout << "\n";
     printrows(x);
     cout << endl;
+    // Main Game Loop below this line:
     while (another == true){
         int playera, playerap, playerb, playerbp;
         cout << "It is " << namea << "'s turn." << endl;
