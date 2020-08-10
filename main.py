@@ -131,6 +131,7 @@ def check(lista):
 #The main game loop, or the main game while loop is below this line.
 namea = input("What's your name?:  ")
 nameb = input("What's your name?:  ")
+printlist()
 while another == True:
     print(f"It is {namea}'s turn.")
     playera = int(input("Enter the row you want to put X in(1, 2, 3):  "))
