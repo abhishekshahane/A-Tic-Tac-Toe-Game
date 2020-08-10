@@ -18,9 +18,138 @@ void printrow(string x[3][3], int playera){
     }
     cout << "\n";
 }
+void check(string x[3][3], bool another, string namea, string nameb){
+    // Checks for every possible win combination
+    if (x[0][0] == "X" && x[0][1] == "X" && x[0][2] == "X"){
+        cout << "Nice " << namea << "! You've won the game!";
+        another = false;
+        exit(0);
+    }
+
+
+    else if (x[1][0] == "X" && x[1][1] == "X" && x[1][2] == "X"){
+        cout << "Nice " << namea << "! You've won the game!";
+        another = false;
+
+        exit(0);
+    }
+
+    else if (x[2][0] == "X" && x[2][1] == "X" && x[2][2] == "X"){
+        cout << "Nice " << namea << "! You've won the game!";
+        another = false;
+
+        exit(0);
+    }
+
+
+    else if (x[0][0] == "X" && x[1][0] == "X" && x[2][0] == "X"){
+        cout << "Nice " << namea << "! You've won the game!";
+        another = false;
+
+        exit(0);
+    }
+
+    else if (x[0][1] == "X" && x[1][1] == "X" && x[2][1] == "X"){
+        cout << "Nice " << namea << "! You've won the game!";
+        another = false;
+
+        exit(0);
+    }
+
+    else if (x[0][2] == "X" && x[1][2] == "X" && x[2][2] == "X"){
+        cout << "Nice " << namea << "! You've won the game!";
+        another = false;
+
+        exit(0);
+    }
+
+
+
+    else if (x[0][0] == "X" && x[1][1] == "X" && x[2][2] == "X"){
+        cout << "Nice " << namea << "! You've won the game!";
+        another = false;
+
+        exit(0);
+    }
+
+
+
+    else if (x[0][2] == "X" && x[1][1] == "X" && x[2][0] == "X"){
+        cout << "Nice " << namea << "! You've won the game!";
+        another = false;
+
+        exit(0);
+    }
+
+    else{
+        another = true;
+    }
+    if (x[0][0] == "O" && x[0][1] == "O" && x[0][2] == "O"){
+        cout << "Nice " << nameb << "! You've won the game!";
+        another = false;
+
+        exit(0);
+    }
+
+
+    else if (x[1][0] == "O" && x[1][1] == "O" && x[1][2] == "O"){
+        cout << "Nice " << nameb << "! You've won the game!";
+        another = false;
+        exit(0);
+    }
+
+
+    else if (x[2][0] == "O" && x[2][1] == "O" && x[2][2] == "O"){
+        cout << "Nice " << nameb << "! You've won the game!";
+        another = false;
+        exit(0);
+    }
+
+
+    else if (x[0][0] == "O" && x[1][0] == "O" && x[2][0] == "O"){
+        cout << "Nice " << nameb << "! You've won the game!";
+        another = false;
+
+        exit(0);
+    }
+
+
+    else if (x[0][1] == "O" && x[1][1] == "O" && x[2][1] == "O"){
+        cout << "Nice " << nameb << "! You've won the game!";
+        another = false;
+
+        exit(0);
+    }
+
+    else if (x[0][2] == "O" && x[1][2] == "O" && x[2][2] == "O")
+    {
+        cout << "Nice " << nameb << "! You've won the game!";
+        another = false;
+        exit(0);
+    }
+
+
+    else if (x[0][0] == "O" && x[1][1] == "O" && x[2][2] == "O"){
+        cout << "Nice " << nameb << "! You've won the game!" << endl;
+        another = false;
+        exit(0);
+    }
+
+
+    else if (x[0][2] == "O" && x[1][1] == "O" && x[2][0] == "O"){
+        cout << "Nice " << nameb << "! You've won the game!" << endl;
+        another = false;
+        exit(0);
+    }
+
+    else{
+        another = true;
+    }
+
+}
 int main()
 {
-    // an array with 3 rows and 2 columns.
+    // an array with 3 rows && 3 columns.
     string namea, nameb;
     bool another = true;
     string x[3][3] = {{"None", "None", "None"}, {"None", "None", "None"}, {"None", "None", "None"}};
@@ -30,6 +159,9 @@ int main()
     cout << "Enter your name:   ";
     cin >> nameb;
     cout << "\n";
+    cout << "\n";
+    cout << "Tic-Tac-Toe Board:  ";
+    cout << "\n";
     printrows(x);
     cout << endl;
     while (another == true){
@@ -38,6 +170,8 @@ int main()
         cout << "Enter the row to put your X in(1, 2, 3):  ";
         cin >> playera;
         playera--;
+        cout << "\n";
+        cout << "Row which you selected:  ";
         cout << "\n";
         printrow(x, playera);
         cout << "\n";
@@ -50,12 +184,19 @@ int main()
         }
         else{
             x[playera][playerap] = "X";
+            cout << "\n";
+            cout << "Tic-Tac-Toe Board:  ";
+            cout << "\n";
             printrows(x);
+            cout << "\n";
         }
+        check(x, another, namea, nameb);
         cout << "It is " << nameb << "'s turn." << endl;
         cout << "Enter the row to put your O in(1, 2, 3):   ";
         cin >> playerb;
         playerb--;
+        cout << "\n";
+        cout << "Row which you selected:  ";
         cout << "\n";
         printrow(x, playera);
         cout << "\n";
@@ -68,9 +209,14 @@ int main()
         }
         else{
             x[playerb][playerbp] = "O";
+            cout << "\n";
+            cout << "Tic-Tac-Toe Board:  ";
+            cout << "\n";
             printrows(x);
+            cout << "\n";
         }
-        return 0;
+        check(x, another, namea, nameb);
+
 
     }
 
@@ -78,3 +224,4 @@ int main()
 
     return 0;
 }
+
