@@ -1,8 +1,5 @@
-
 #include <iostream>
 #include <stdlib.h>
-
-
 using namespace std;
 void printrows(string x[3][3])
 {
@@ -19,6 +16,21 @@ void printrow(string x[3][3], int playera)
         cout << x[playera][b] << "  ";
     }
     cout << "\n";
+}
+bool tie(string x[3][3],bool tieNotTrue){
+    for (int i = 0; i < 3; i++){
+        for (int j = 0; j<3; j++){
+            if (x[i][j]!="None"){
+                tieNotTrue = false;
+            }
+            else{
+                tieNotTrue = true;
+                return tieNotTrue;
+            }
+        }
+    }
+    cout << "It is a tie!" << endl;
+    exit(0);
 }
 void check(string x[3][3], bool another, string namea, string nameb)
 {
@@ -80,9 +92,6 @@ void check(string x[3][3], bool another, string namea, string nameb)
 
         exit(0);
     }
-
-
-
     else if (x[0][2] == "X" && x[1][1] == "X" && x[2][0] == "X")
     {
         cout << "Nice " << namea << "! You've won the game!";
@@ -143,33 +152,28 @@ void check(string x[3][3], bool another, string namea, string nameb)
         another = false;
         exit(0);
     }
-
-
     else if (x[0][0] == "O" && x[1][1] == "O" && x[2][2] == "O")
     {
         cout << "Nice " << nameb << "! You've won the game!" << endl;
         another = false;
         exit(0);
     }
-
-
     else if (x[0][2] == "O" && x[1][1] == "O" && x[2][0] == "O")
     {
         cout << "Nice " << nameb << "! You've won the game!" << endl;
         another = false;
         exit(0);
     }
-
     else{
         another = true;
     }
-
 }
 int main()
 {
     // an array with 3 rows && 3 columns.
     string namea, nameb;
     bool another = true;
+    bool tieNotTrue = true;
     string x[3][3] = {{"None", "None", "None"}, {"None", "None", "None"}, {"None", "None", "None"}};
     cout << "Enter your name:   ";
     cin >> namea;
@@ -183,7 +187,7 @@ int main()
     printrows(x);
     cout << endl;
     // Main Game Loop below this line:
-    while (another == true)
+    while (another == true and tieNotTrue==true)
     {
         int playera, playerap, playerb, playerbp;
         cout << "It is " << namea << "'s turn." << endl;
@@ -213,6 +217,7 @@ int main()
             cout << "\n";
         }
         check(x, another, namea, nameb);
+        tie(x, tieNotTrue);
         cout << "It is " << nameb << "'s turn." << endl;
         cout << "Enter the row to put your O in(1, 2, 3):   ";
         cin >> playerb;
@@ -240,12 +245,7 @@ int main()
             cout << "\n";
         }
         check(x, another, namea, nameb);
-
-
+        tie(x, tieNotTrue);
     }
-
-
-
     return 0;
 }
-
