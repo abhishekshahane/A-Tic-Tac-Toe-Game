@@ -31,56 +31,42 @@ def check(lista):
         print(f"Nice {namea}! You've won the game!")
         another = False
         sleep(2)
-        exit()
-               
-            
+        exit()   
     elif (lista[1][0] == 'X' and lista[1][1] == 'X' and lista[1][2] == 'X'):
         print(f"Nice {namea}! You've won the game!")
         another = False
         sleep(2)
         exit()
-      
     elif (lista[2][0] == 'X' and lista[2][1] == 'X' and lista[2][2] == 'X'):
         print(f"Nice {namea}! You've won the game!")
         another = False
         sleep(2)
         exit()
-          
-          
     elif (lista[0][0] == 'X' and lista[1][0] == 'X' and lista[2][0] == 'X'):
         print(f"Nice {namea}! You've won the game!")
         another = False
         sleep(2)
         exit()
-        
     elif (lista[0][1] == 'X' and lista[1][1] == 'X' and lista[2][1] == 'X'):
         print(f"Nice {namea}! You've won the game!")
         another = False
         sleep(2)
         exit()
-         
     elif (lista[0][2] == 'X' and lista[1][2] == 'X' and lista[2][2] == 'X'):
         print(f"Nice {namea}! You've won the game!")
         another = False
         sleep(2)
         exit()
- 
-            
-           
     elif (lista[0][0] == 'X' and lista[1][1] == 'X' and lista[2][2] == 'X'):
         print(f"Nice {namea}! You've won the game!")
         another = False
         sleep(2)
         exit()
-    
-
-          
     elif (lista[0][2] == 'X' and lista[1][1] == 'X' and lista[2][0] == 'X'):
         print(f"Nice {namea}! You've won the game!")
         another = False
         sleep(2)
         exit()
-            
     else:
         another = True
         # The code below this is to BrainStorm every possible win combination.
@@ -89,56 +75,41 @@ def check(lista):
         another = False
         sleep(2)
         exit()
-            
-      
     elif (lista[1][0] == 'O' and lista[1][1] == 'O' and lista[1][2] == 'O'):
         print(f"Nice {nameb}! You've won the game!")
         another = False
         sleep(2)
         exit()
-            
-         
     elif (lista[2][0] == 'O' and lista[2][1] == 'O' and lista[2][2] == 'O'):
         print(f"Nice {nameb}! You've won the game!")
         another = False
         sleep(2)
         exit()
-            
-         
     elif (lista[0][0] == 'O' and lista[1][0] == 'O' and lista[2][0] == 'O'):
         print(f"Nice {nameb}! You've won the game!")
         another = False
         sleep(2)
         exit()
-            
-       
     elif (lista[0][1] == 'O' and lista[1][1] == 'O' and lista[2][1] == 'O'):
         print(f"Nice {nameb}! You've won the game!")
         another = False
         sleep(2)
         exit()
-           
-        
     elif (lista[0][2] == 'O' and lista[1][2] == 'O' and lista[2][2] == 'O'):
         print(f"Nice {nameb}! You've won the game!")
         another = False
         sleep(2)
         exit()
-            
-          
     elif (lista[0][0] == 'O' and lista[1][1] == 'O' and lista[2][2] == 'O'):
         print(f"Nice {nameb}! You've won the game!")
         another = False
         sleep(2)
         exit()
-           
-           
     elif (lista[0][2] == 'O' and lista[1][1] == 'O' and lista[2][0] == 'O'):
         print(f"Nice {nameb}! You've won the game!")
         another = False
         sleep(2)
         exit()
-           
     else:
         another = True
                 
